@@ -1,44 +1,66 @@
-# chai aur backend series
+# Node.js Aur Backend Series
 
-This is a video series on backend with javascript
-- [Model link](https://app.eraser.io/workspace/YtPqZ1VogxGy1jzIDkzj?origin=share)
+This is a video series on creating a backend with JavaScript.
 
-# step-1
-# How to create node js backend ?
-# npm init
+## Step 1: Initialize a Node.js Backend
+To create a new Node.js project, run:
+```bash
+npm init
+```
 
-step-2
-create src folder
+## Step 2: Create a `src` Folder
+Organize your project by creating a `src` folder:
+```bash
+mkdir src
+```
 
-step-3
-inside src create below file
-touch app.js constants.js index.js
+## Step 3: Create Essential Files Inside `src`
+Inside the `src` folder, create the following files:
+```bash
+touch src/app.js src/constants.js src/index.js
+```
 
-step-4
-## If you want to import  something using import keyword then add 'module' in package.json
-# "type": "module"
+### Note:
+To use the `import` keyword for module imports, add the following to your `package.json`:
+```json
+"type": "module"
+```
 
-## How to auto restart server after file save
-# using Nodemon 
-# npm i -D nodemon
-# "dev": "nodemon src/index.js"
+## Step 4: Enable Auto-Restart for the Server
+Install `nodemon` for auto-restarting the server after saving changes:
+```bash
+npm install -D nodemon
+```
+Add a script to your `package.json`:
+```json
+"dev": "nodemon src/index.js"
+```
 
-step-5
-create below folder
-mkdir controllers, db, middlewares, models, routes, utils
+## Step 5: Create Project Structure
+Create the following folders for better project organization:
+```bash
+mkdir controllers db middlewares models routes utils
+```
 
-step-6 (optional)
-install prettier
--D use for developer
-npm i -D prettier
+## Step 6 (Optional): Install Prettier
+To ensure consistent code formatting, install Prettier as a dev dependency:
+```bash
+npm install -D prettier
+```
 
+## Step 7: Install Required Packages
+Install essential backend packages:
+```bash
+npm install express mongoose dotenv
+```
 
-step-7
-install below packages
-npm i  express mongoose dotenv
+## Step 8: Database Connection
+1. Write the database connection logic in `src/db/index.js`.
+2. Import the database connection in `src/index.js`.
 
-step-8
--> connect db (all code are in the db/index.js)
--> import in index.js(all code are in index.js)
--> we are imprt (import dotenv from 'dotenv') so we change in package.json
-    ->"dev": "nodemon -r dotenv/config  src/index.js"
+### Additional Note:
+Since we are using `dotenv`, modify the `dev` script in `package.json` as follows:
+```json
+"dev": "nodemon -r dotenv/config src/index.js"
+```
+
